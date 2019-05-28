@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const taskController = require("./controllers/TaskController");
+const eventController = require("./controllers/EventController");
 
 // db instance connection
 require("./config/db");
@@ -14,15 +14,15 @@ app.use(bodyParser.json());
 // API ENDPOINTS
 
 app
-  .route("/tasks")
-  .get(taskController.listAllTasks)
-  .post(taskController.createNewTask);
+  .route("/events")
+  .get(eventController.listAllEvents)
+  .post(eventController.createNewEvent);
 
 app
-  .route("/tasks/:taskid")
-  .get(taskController.readTask)
-  .put(taskController.updateTask)
-  .delete(taskController.deleteTask);
+  .route("/events/:eventid")
+  .get(eventController.readEvent)
+  .put(eventController.updateEvent)
+  .delete(eventController.deleteEvent);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
