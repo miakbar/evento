@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const dbURI =
-  "mongodb+srv://evento:zomboogie987@cluster0-mlyhb.gcp.mongodb.net/test?retryWrites=true";
+  "mongodb://evento:zomboogie987@cluster0-shard-00-00-mlyhb.gcp.mongodb.net:27017,cluster0-shard-00-01-mlyhb.gcp.mongodb.net:27017,cluster0-shard-00-02-mlyhb.gcp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
 
 const options = {
   reconnectTries: Number.MAX_VALUE,
